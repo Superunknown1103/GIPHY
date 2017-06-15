@@ -33,6 +33,7 @@ $(document).ready(function(){
                 var gifImage = $('<img>');
                 var gifStill = response.data[i].images.fixed_height_still.url;
                 var gifAnimate = results[i].images.fixed_height.url
+                var rating = response.data[i].rating;
 
                 gifImage.addClass('gifToggle');
                 gifImage.attr('data-still', gifStill);
@@ -41,9 +42,11 @@ $(document).ready(function(){
                 gifImage.attr('src', gifStill);
 
                 gifDiv.append(p);
-                gifDiv.append(gifImage);		           	
+                gifDiv.append(gifImage);
+                gifDiv.prepend(rating);
+                gifDiv.prepend('Rating: ')	           	
 
-            	$('#gifView').prepend(gifDiv); 	
+            	$('#gifView').prepend(gifDiv);
         	}
         }); 
     }
