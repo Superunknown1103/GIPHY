@@ -5,7 +5,6 @@ $(document).ready(function(){
 	function appendNewButton(newGif){ 
         var createButton = $('<button>')
         createButton.attr('type', "button");
-        createButton.addClass('btn btn-default');
         createButton.addClass('gif');
         createButton.attr('data-name', newGif);
         createButton.text(newGif);
@@ -73,7 +72,7 @@ $(document).ready(function(){
 		gifArray.push(gifSearch);
 		appendNewButton(gifSearch);
 
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&api_key=dc6zaTOxFJmzC&limit=10";
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&api_key=dc6zaTOxFJmzC&limit=5";
 
 		$.ajax({
 	            url: queryURL,
